@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/javax.annotation-api-1.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/mysql-connector-java-8.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-aop-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-beans-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-context-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-context-indexer-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-context-support-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-core-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-expression-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-jdbc-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-tx-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/mariadb/mariadb-java-client-2.7.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/mockito/byte-buddy-1.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/mockito/mockito-core-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/mockito/objenesis-3.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/ProyectoCompleto/AdmGLP/lib/spring/spring-test-5.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
