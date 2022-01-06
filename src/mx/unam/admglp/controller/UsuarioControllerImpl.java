@@ -13,12 +13,12 @@ import mx.unam.admglp.service.UsuarioService;
 import mx.unam.admglp.service.dto.Usuario;
 
 @Controller
-public class UsuarioControllerImpl implements UsuarioController { 
+public class UsuarioControllerImpl implements UsuarioController {
 
 	private static Log log = LogFactory.getLog(UsuarioControllerImpl.class);
 
 	private UsuarioService usuarioService;
-	
+
 	public UsuarioControllerImpl(UsuarioService usuarioService) {
 		this.usuarioService = usuarioService;
 	}
@@ -33,7 +33,7 @@ public class UsuarioControllerImpl implements UsuarioController {
 	@Override
 	public void obtenerUsuarios() {
 		// TODO Auto-generated method stub
-		List<Usuario> usuarios =  usuarioService.obtenerUsuarios();
+		List<Usuario> usuarios = usuarioService.obtenerUsuarios();
 		for (Usuario u : usuarios) {
 			System.out.println(u);
 		}
@@ -47,24 +47,38 @@ public class UsuarioControllerImpl implements UsuarioController {
 	}
 
 	@Override
-	public void actualizarUsuario(Usuario usuarioRequest) {
+	public void actualizarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		
+		Usuario u = usuarioService.actualizarUsuario(usuario);
+		if (u != null) {
+			System.out.println("Se actualiza usuario");
+			System.out.println(u);
+		} else {
+			System.out.println("Sin actualizar usuario");
+		}
 	}
 
 	@Override
-	public void borrarUsuario(Usuario usuarioRequest) {
+	public void actualizarUsuarioEstatus(Usuario usuario, Integer nuevoEstatus) {
 		// TODO Auto-generated method stub
-		
+		Usuario u = usuarioService.actualizarUsuarioEstatus(usuario, nuevoEstatus);
+		if (u != null) {
+			System.out.println("Se actualiza estatus usuario (" + nuevoEstatus + ")");
+			System.out.println(u);
+		} else {
+			System.out.println("Sin actualizar estatus usuario");
+		}
+
 	}
-	
+
 	@PostConstruct
 	public void inicializar() {
 		log.info("Inicializando UsuarioControllerImpl");
 	}
-	
+
 	@PreDestroy
 	public void destruir() {
 		log.info("Destruyendo UsuarioControllerImpl");
 	}
+
 }

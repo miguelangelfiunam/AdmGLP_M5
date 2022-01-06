@@ -8,6 +8,6 @@ public interface UsuarioRepository {
 	public UsuarioDTO obtenerUsuario(Integer id);
 	public List<UsuarioDTO> obtenerUsuarios();
 	public Integer insertarUsuario(UsuarioDTO usuarioDTO);
-	public Boolean actualizarUsuario(UsuarioDTO usuarioDTO);
-	public Boolean borrarUsuario(UsuarioDTO usuarioDTO);
+	public UsuarioDTO actualizarUsuario(UsuarioDTO usuarioDTO);
+	public UsuarioDTO actualizarUsuarioEstatus(UsuarioDTO usuarioDTO, Integer nuevoEstatus);
 }

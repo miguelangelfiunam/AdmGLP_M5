@@ -8,6 +8,6 @@ public interface UsuarioService {
 	public Usuario obtenerUsuario(Integer id);
 	public List<Usuario> obtenerUsuarios();
 	public Usuario insertarUsuario(Usuario usuario);
-	public Boolean actualizarUsuario(Usuario usuario);
-	public Boolean borrarUsuario(Usuario usuario);
+	public Usuario actualizarUsuario(Usuario usuario);
+	public Usuario actualizarUsuarioEstatus(Usuario usuario, Integer nuevoEstatus);
 }

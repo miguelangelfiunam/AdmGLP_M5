@@ -7,5 +7,6 @@ public interface ContraRepository {
 	public ContraDTO obtenerContraPorUsuario(Integer idUsuario);
 	public Integer insertarContra(ContraDTO contraDTO);
 	public ContraDTO actualizarContra(ContraDTO contraDTO);
-	public ContraDTO borrarContra(ContraDTO contraDTO);
+	public ContraDTO actualizarEstatusContra(ContraDTO contraDTO, Integer nuevoStatus);
+	
 }

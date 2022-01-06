@@ -28,6 +28,10 @@ public class ContraRepositoryImpl implements ContraRepository {
 			+ "FROM t_usuario tu, t_contra tc WHERE tu.id_usuario = ? " + "AND tu.id_contra = tc.id_contra ";
 	protected static String INSERT_CONTRA = "INSERT INTO " + "t_contra(contra_vc_contra_cifrado, "
 			+ "contra_dt_fecha_registro, contra_dt_fecha_actualizacion, contra_si_estatus) VALUES(?, NOW(), NULL, ?)";
+	protected static String UPDATE_CONTRA = "UPDATE t_contra SET contra_vc_contra_cifrado = ?, "
+			+ "contra_dt_fecha_actualizacion = NOW() WHERE id_contra = ?";
+	protected static String UPDATE_CONTRA_STATUS = "UPDATE t_contra SET contra_si_estatus = ?, "
+			+ "contra_dt_fecha_actualizacion = NOW() WHERE id_contra = ?";
 
 	@Override
 	public ContraDTO obtenerContra(Integer id) {
@@ -35,8 +39,13 @@ public class ContraRepositoryImpl implements ContraRepository {
 		try {
 			return jdbcTemplate.queryForObject(SELECT_CONTRA,
 					(rs, rowNum) -> new ContraDTO(rs.getInt("id_contra"), rs.getString("contra_vc_contra_cifrado"),
-							rs.getTimestamp("contra_dt_fecha_registro"),
-							rs.getTimestamp("contra_dt_fecha_actualizacion"), rs.getInt("contra_si_estatus")),
+							rs.getTimestamp("contra_dt_fecha_registro") != null
+									? rs.getTimestamp("contra_dt_fecha_registro").toLocalDateTime()
+									: null,
+							rs.getTimestamp("contra_dt_fecha_actualizacion") != null
+									? rs.getTimestamp("contra_dt_fecha_actualizacion").toLocalDateTime()
+									: null,
+							rs.getInt("contra_si_estatus")),
 					id);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -52,8 +61,9 @@ public class ContraRepositoryImpl implements ContraRepository {
 		try {
 			return jdbcTemplate.queryForObject(SELECT_CONTRA_USU,
 					(rs, rowNum) -> new ContraDTO(rs.getInt("id_contra"), rs.getString("contra_vc_contra_cifrado"),
-							rs.getTimestamp("contra_dt_fecha_registro"),
-							rs.getTimestamp("contra_dt_fecha_actualizacion"), rs.getInt("contra_si_estatus")),
+							rs.getTimestamp("contra_dt_fecha_registro").toLocalDateTime(),
+							rs.getTimestamp("contra_dt_fecha_actualizacion").toLocalDateTime(),
+							rs.getInt("contra_si_estatus")),
 					idUsuario);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -79,13 +89,15 @@ public class ContraRepositoryImpl implements ContraRepository {
 	@Override
 	public ContraDTO actualizarContra(ContraDTO contraDTO) {
 		// TODO Auto-generated method stub
-		return null;
+		int res = jdbcTemplate.update(UPDATE_CONTRA, contraDTO.getContraCifrado(), contraDTO.getId());
+		return res == 1 ? contraDTO : null;
 	}
 
 	@Override
-	public ContraDTO borrarContra(ContraDTO contraDTO) {
+	public ContraDTO actualizarEstatusContra(ContraDTO contraDTO, Integer nuevoStatus) {
 		// TODO Auto-generated method stub
-		return null;
+		int res = jdbcTemplate.update(UPDATE_CONTRA_STATUS, nuevoStatus, contraDTO.getId());
+		return res == 1 ? contraDTO : null;
 	}
 
 }

@@ -1,6 +1,7 @@
 package mx.unam.admglp.service.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Usuario {
 	private Integer idUsuario; // Identificador de usuario
@@ -12,19 +13,19 @@ public class Usuario {
 	private String apellido1; // Primer apellido 100
 	private String apellido2; // Segundo apellido 100
 	private Integer edad;// Edad de la persona
-	private Date fechaNacimiento; // Fecha de nacimiento
+	private LocalDate fechaNacimiento; // Fecha de nacimiento
 	private String telefono1; // Telefono del usuario
 	private String telefono2; // Segundo telefono de contacto
-	private Date fecRegistro; // Fecha de Inicio de acceso a la aplicacion
-	private Date fecActualizacion; // Fecha de fin de acceso a la aplicacion
+	private LocalDateTime fecRegistro; // Fecha de Inicio de acceso a la aplicacion
+	private LocalDateTime fecActualizacion; // Fecha de fin de acceso a la aplicacion
 	private Integer estatus; // Estado del usuario
 //	private Set<UsuarioRol> usuariosRoles;
 
 	private Contra contra;
 
 	public Usuario(Integer idUsuario, String apodo, String correo1, String correo2, String nombre, String apellido1,
-			String apellido2, Integer edad, Date fechaNacimiento, String telefono1, String telefono2, Date fecRegistro,
-			Date fecActualizacion, Integer estatus) {
+			String apellido2, Integer edad, LocalDate fechaNacimiento, String telefono1, String telefono2, LocalDateTime fecRegistro,
+			LocalDateTime fecActualizacion, Integer estatus) {
 		this.idUsuario = idUsuario;
 		this.apodo = apodo;
 		this.correo1 = correo1;
@@ -42,7 +43,7 @@ public class Usuario {
 	}
 
 	public Usuario(Contra contra, String apodo, String correo1, String correo2, String nombre, String apellido1,
-			String apellido2, Integer edad, Date fechaNacimiento, String telefono1, String telefono2,
+			String apellido2, Integer edad, LocalDate fechaNacimiento, String telefono1, String telefono2,
 			Integer estatus) {
 		this.contra = contra;
 		this.apodo = apodo;
@@ -122,11 +123,11 @@ public class Usuario {
 		this.edad = edad;
 	}
 
-	public Date getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -146,19 +147,19 @@ public class Usuario {
 		this.telefono2 = telefono2;
 	}
 
-	public Date getFecRegistro() {
+	public LocalDateTime getFecRegistro() {
 		return fecRegistro;
 	}
 
-	public void setFecRegistro(Date fecRegistro) {
+	public void setFecRegistro(LocalDateTime fecRegistro) {
 		this.fecRegistro = fecRegistro;
 	}
 
-	public Date getFecActualizacion() {
+	public LocalDateTime getFecActualizacion() {
 		return fecActualizacion;
 	}
 
-	public void setFecActualizacion(Date fecActualizacion) {
+	public void setFecActualizacion(LocalDateTime fecActualizacion) {
 		this.fecActualizacion = fecActualizacion;
 	}
 

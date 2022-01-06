@@ -1,15 +1,15 @@
 package mx.unam.admglp.repository.dto;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class ContraDTO {
 	private Integer id;
 	private String contraCifrado;
-	private Date fecRegistro; // Fecha de registro
-	private Date fecActualizacion; // Fecha de actualizacion
+	private LocalDateTime fecRegistro; // Fecha de registro
+	private LocalDateTime fecActualizacion; // Fecha de actualizacion
 	private Integer estatus; // Estatus del registro en la base
 
-	public ContraDTO(Integer id, String contraCifrado, Date fecRegistro, Date fecActualizacion, Integer estatus) {
+	public ContraDTO(Integer id, String contraCifrado, LocalDateTime fecRegistro, LocalDateTime fecActualizacion, Integer estatus) {
 		this.id = id;
 		this.contraCifrado = contraCifrado;
 		this.fecRegistro = fecRegistro;
@@ -17,7 +17,7 @@ public class ContraDTO {
 		this.estatus = estatus;
 	}
 
-	public ContraDTO(String contraCifrado, Date fecRegistro, Date fecActualizacion, Integer estatus) {
+	public ContraDTO(String contraCifrado, LocalDateTime fecRegistro, LocalDateTime fecActualizacion, Integer estatus) {
 		this.contraCifrado = contraCifrado;
 		this.fecRegistro = fecRegistro;
 		this.fecActualizacion = fecActualizacion;
@@ -45,19 +45,19 @@ public class ContraDTO {
 		this.contraCifrado = contraCifrado;
 	}
 
-	public Date getFecRegistro() {
+	public LocalDateTime getFecRegistro() {
 		return fecRegistro;
 	}
 
-	public void setFecRegistro(Date fecRegistro) {
+	public void setFecRegistro(LocalDateTime fecRegistro) {
 		this.fecRegistro = fecRegistro;
 	}
 
-	public Date getFecActualizacion() {
+	public LocalDateTime getFecActualizacion() {
 		return fecActualizacion;
 	}
 
-	public void setFecActualizacion(Date fecActualizacion) {
+	public void setFecActualizacion(LocalDateTime fecActualizacion) {
 		this.fecActualizacion = fecActualizacion;
 	}
 

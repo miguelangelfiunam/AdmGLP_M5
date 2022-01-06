@@ -1,6 +1,6 @@
 package mx.unam.admglp.repository.dto;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class AsentamientoDTO {
 	private Integer id;
@@ -8,12 +8,12 @@ public class AsentamientoDTO {
 	private String codigoPostal;
 	private String tipo;
 	private String nombre;
-	private Date fecRegistro; // Fecha de Inicio de acceso a la aplicacion
-	private Date fecActualizacion; // Fecha de fin de acceso a la aplicacion
+	private LocalDateTime fecRegistro; // Fecha de Inicio de acceso a la aplicacion
+	private LocalDateTime fecActualizacion; // Fecha de fin de acceso a la aplicacion
 	private Integer estatus;
 
-	public AsentamientoDTO(Integer id, String clave, String codigoPostal, String tipo, String nombre, Date fecRegistro,
-			Date fecActualizacion, Integer estatus) {
+	public AsentamientoDTO(Integer id, String clave, String codigoPostal, String tipo, String nombre, LocalDateTime fecRegistro,
+			LocalDateTime fecActualizacion, Integer estatus) {
 		this.id = id;
 		this.clave = clave;
 		this.codigoPostal = codigoPostal;
@@ -64,19 +64,19 @@ public class AsentamientoDTO {
 		this.nombre = nombre;
 	}
 
-	public Date getFecRegistro() {
+	public LocalDateTime getFecRegistro() {
 		return fecRegistro;
 	}
 
-	public void setFecRegistro(Date fecRegistro) {
+	public void setFecRegistro(LocalDateTime fecRegistro) {
 		this.fecRegistro = fecRegistro;
 	}
 
-	public Date getFecActualizacion() {
+	public LocalDateTime getFecActualizacion() {
 		return fecActualizacion;
 	}
 
-	public void setFecActualizacion(Date fecActualizacion) {
+	public void setFecActualizacion(LocalDateTime fecActualizacion) {
 		this.fecActualizacion = fecActualizacion;
 	}
 
