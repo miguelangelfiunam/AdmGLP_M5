@@ -59,6 +59,21 @@ public class Usuario {
 		this.estatus = estatus;
 	}
 
+	public Usuario(Integer idUsuario, String apodo, String correo1, String correo2, String nombre, String apellido1,
+			String apellido2, Integer edad, LocalDate fechaNacimiento, String telefono1, String telefono2) {
+		this.idUsuario = idUsuario;
+		this.apodo = apodo;
+		this.correo1 = correo1;
+		this.correo2 = correo2;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.edad = edad;
+		this.fechaNacimiento = fechaNacimiento;
+		this.telefono1 = telefono1;
+		this.telefono2 = telefono2;
+	}
+
 	public Integer getIdUsuario() {
 		return idUsuario;
 	}
